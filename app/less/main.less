@@ -1,12 +1,5 @@
 @import "color";
-
-html {
-    box-sizing: border-box;
-}
-
-*, *:before, *:after {
-    box-sizing: inherit;
-}
+@import "util";
 
 html, body {
 	background: #CCCCCC;
@@ -19,15 +12,15 @@ header {
     background-color: @theme-base;
 }
 
+#logo {
+    height: 50px;
+    width: 50px;
+    background-color: @theme-object;
+}
+
 #maincontent {
     position: relative;
     top: -60px;
     padding-top: 60px;
     height: 100%;
-}
-
-.vertical-center {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
 }
