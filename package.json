@@ -2,21 +2,24 @@
   "name": "GhostChat",
   "version": "0.0.1",
   "description": "GhostChat client",
+  "scripts": {
+    "test": "grunt test"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Praseetha-KR/ghostchat-client.git"
   },
-  "author": "Praseetha KR & Sharat MR",
+  "author": "Praseetha KR, Sharat MR",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Praseetha-KR/ghostchat-client/issues"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-coffee": "^0.11.0",
-    "grunt-contrib-connect": "^0.8.0",
-    "grunt-contrib-less": "^0.11.4",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-watch": "*"
   },
   "dependencies": {}
 }
