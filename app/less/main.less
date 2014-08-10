@@ -2,14 +2,16 @@
 @import "util";
 
 html, body {
-	background: #CCCCCC;
+	background: @theme-background;
     height: 100%;
     width: 100%;
 }
 
 header {
+    position: relative;
     height: 60px;
     background-color: @theme-base;
+    padding: 0 10px;
 }
 
 #logo {
@@ -18,9 +20,22 @@ header {
     background-color: @theme-object;
 }
 
+#logo,#title {
+    display: inline-block;
+    float: left;
+}
+
+#title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
 #maincontent {
     position: relative;
     top: -60px;
     padding-top: 60px;
     height: 100%;
+    text-align: center;
 }
