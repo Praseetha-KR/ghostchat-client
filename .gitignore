@@ -27,3 +27,5 @@ bower_components
 
 app/css
 app/js
+
+.DS_Store
