@@ -1,0 +1,23 @@
+{
+  "name": "ghostchat-client",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Praseetha-KR/ghostchat-client",
+  "authors": [
+    "Sharat M R <cosmosgenius@gmail.com>",
+    "Praseetha KR <imagineer.in>"
+  ],
+  "description": "UI for GhostChat",
+  "keywords": [
+    "ghostchat"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "1.2.x"
+  }
+}
