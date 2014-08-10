@@ -1,3 +1,31 @@
-body{
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body {
 	background: #CCCCCC;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    height: 60px;
+    background-color: #69D2E7;
+}
+
+#maincontent {
+    position: relative;
+    top: -60px;
+    padding-top: 60px;
+    height: 100%;
+}
+
+.vertical-center {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
