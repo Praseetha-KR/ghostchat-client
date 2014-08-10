@@ -18,7 +18,6 @@
     "bower_components"
   ],
   "dependencies": {
-    "angular": "1.2.x",
-    "jquery": "2.1.1"
+    "angular": "1.2.x"
   }
 }
