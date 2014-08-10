@@ -2,6 +2,9 @@
   "name": "GhostChat",
   "version": "0.0.1",
   "description": "GhostChat client",
+  "scripts": {
+    "test": "grunt test"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Praseetha-KR/ghostchat-client.git"
