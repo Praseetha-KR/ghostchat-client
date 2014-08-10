@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         less: {
             development: {
                 files: {
-                    'app/css/style.css': 'app/less/main.less'
+                    'app/css/main.css': 'app/less/main.less'
                 }
             },
             production: {
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                     cleancss: true,
                 },
                 files: {
-                    'app/css/style.css': 'app/less/main.less'
+                    'app/css/main.css': 'app/less/main.less'
                 }
             }
         },
