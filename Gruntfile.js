@@ -27,6 +27,18 @@ module.exports = function(grunt) {
                 }
             }
         },
+        coffee: {
+            development: {
+                files: {
+                    'app/js/main.js': ['app/coffee/*.coffee']
+                }
+            },
+            production: {
+                files: {
+                    'app/js/main.js': ['app/coffee/*.coffee']
+                }
+            }
+        },
         watch: {
             html: {
                 files: ['**/*.html', '!app/bower_components/**/*.html', '!npm_modules/**/*.html'],
@@ -60,18 +72,6 @@ module.exports = function(grunt) {
                     reload: true
                 }
             }
-        },
-        coffee: {
-            development: {
-                files: {
-                    'app/js/main.js': ['app/coffee/*.coffee']
-                }
-            },
-            production: {
-                files: {
-                    'app/js/main.js': ['app/coffee/*.coffee']
-                }
-            }
         }
     });
 
@@ -82,5 +82,5 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['less:development', 'coffee:development', 'connect', 'watch']);
     grunt.registerTask('test', []);
-    grunt.registerTask('prod', []);
+    grunt.registerTask('prod', ['less:production','coffee:production']);
 };
