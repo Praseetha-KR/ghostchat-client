@@ -78,6 +78,27 @@ header {
         margin: 10px;
     }
 }
+.friends_list {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 10px;
+    .friend {
+        border-bottom: 1px solid @theme-object;
+        text-align: left;
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+        padding: 1em auto 2em auto;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    a {
+        color: @theme-object;
+    }
+}
 
 .imageview {
     background-color: @theme-object;
