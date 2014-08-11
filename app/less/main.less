@@ -1,5 +1,7 @@
 @import "util";
 @import "color";
+@import "vars";
+
 html, body {
 	background: @theme-background;
     height: 100%;
@@ -14,8 +16,8 @@ header {
 }
 
 #logo {
-    height: 40px;
-    width: 40px;
+    height: @header-height - 20px;
+    width: @header-height - 20px;
     background-color: @theme-object;
 }
 
@@ -33,8 +35,8 @@ header {
 
 #maincontent {
     position: relative;
-    top: -60px;
-    padding-top: 60px;
+    top: -@header-height;
+    padding-top: @header-height;
     height: 100%;
     text-align: center;
 }
