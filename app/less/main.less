@@ -54,3 +54,24 @@ header {
         margin: 0 8px 0 2px;
     }
 }
+
+.scrollwrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image_list {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    overflow: auto;
+    .image {
+        background-color: @theme-object;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        margin: 10px;
+    }
+}
