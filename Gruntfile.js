@@ -30,12 +30,18 @@ module.exports = function(grunt) {
         coffee: {
             development: {
                 files: {
-                    'app/js/main.js': ['app/coffee/*.coffee']
+                    'app/js/main.js': ['app/coffee/main.coffee','app/coffee/*.coffee']
+                },
+                options : {
+                    join : true
                 }
             },
             production: {
                 files: {
                     'app/js/main.js': ['app/coffee/*.coffee']
+                },
+                options : {
+                    join : true
                 }
             }
         },
