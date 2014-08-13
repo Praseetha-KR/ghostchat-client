@@ -1,4 +1,4 @@
-ghostChatApp = angular.module 'ghostChatApp', []
+ghostChatApp = angular.module 'ghostChatApp', ['ngRoute']
 
-ghostChatApp.controller 'ListCtrl', ($scope) ->
-	$scope.fn = []
+ghostChatApp.controller 'mainController', ($scope) ->
+	$scope.message = 'Loading ....'

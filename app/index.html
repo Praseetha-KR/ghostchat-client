@@ -7,15 +7,12 @@
     <link rel="stylesheet" href="bower_components/icomoon/style.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-	<header>
-        <span id="logo" class="vertical-center"></span>
-        <span id="title" class="vertical-center">GhostChat</span>
-    </header>
-    <div id="maincontent">
-        <div id="takepic" class="vertical-center"><i class="icon-camera"></i>&nbsp;&nbsp;Take Pic</div>
+<body ng-controller="mainController">
+    <div ng-view id="bodywrapper">
+        {{ message }}
     </div>
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
