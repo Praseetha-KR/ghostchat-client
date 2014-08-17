@@ -27,34 +27,12 @@ module.exports = function(grunt) {
                 }
             }
         },
-        coffee: {
-            development: {
-                files: {
-                    'app/js/main.js': ['app/coffee/main.coffee','app/coffee/*.coffee']
-                },
-                options : {
-                    join : true
-                }
-            },
-            production: {
-                files: {
-                    'app/js/main.js': ['app/coffee/*.coffee']
-                },
-                options : {
-                    join : true
-                }
-            }
-        },
         watch: {
             html: {
                 files: ['**/*.html', '!app/bower_components/**/*.html', '!npm_modules/**/*.html'],
                 options: {
                     livereload: true,
                 }
-            },
-            coffee: {
-                files: ['app/coffee/**/*.coffee'],
-                tasks: ['coffee:development']
             },
             less: {
                 files: ['app/less/**/*.less'],
@@ -86,7 +64,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-coffee');
 
-    grunt.registerTask('default', ['less:development', 'coffee:development', 'connect', 'watch']);
+    grunt.registerTask('default', ['less:development', 'connect', 'watch']);
     grunt.registerTask('test', []);
-    grunt.registerTask('prod', ['less:production','coffee:production']);
+    grunt.registerTask('prod', ['less:production']);
 };

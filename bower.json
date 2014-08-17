@@ -1,6 +1,6 @@
 {
   "name": "ghostchat-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/Praseetha-KR/ghostchat-client",
   "authors": [
     "Praseetha KR <imagineer.in>",
@@ -18,9 +18,7 @@
     "bower_components"
   ],
   "dependencies": {
-    "angular": "1.2.x",
     "normalize-css": "~3.0.1",
-    "icomoon": "~0.0.1",
-    "angular-route": "~1.2.22"
+    "icomoon": "~0.0.1"
   }
 }
