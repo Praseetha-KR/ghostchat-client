@@ -1,18 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ghostChatApp">
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>GhostChat</title>
+    <meta charset="UTF-8">
+    <title>GhostChat</title>
     <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
     <link rel="stylesheet" href="bower_components/icomoon/style.css">
-	<link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
-<body ng-controller="mainController">
-    <div ng-view id="bodywrapper">
-        {{ message }}
+<body>
+    <div id="bodywrapper">
+        <header>
+            <span id="logo" class="vertical-center"></span>
+            <span id="title" class="vertical-center">GhostChat</span>
+        </header>
+        <div id="maincontent" class="footer-clearance">
+            <video id="video" width="320" height="240" autoplay></video>
+            <!-- <button id="snap">Snap Photo</button> -->
+            <canvas id="canvas" width="640" height="480"></canvas>
+        </div>
+        <footer>
+            <ul id="footer-buttons">
+                <li><a id="snap"><i class="icon-camera"></i></a></li>
+            </ul>
+        </footer>
     </div>
-    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
