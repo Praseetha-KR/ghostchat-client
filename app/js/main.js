@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 function convertCanvasToImage(canvas) {
 	var image = new Image();
@@ -6,30 +6,24 @@ function convertCanvasToImage(canvas) {
 	return image;
 }
 
-window.addEventListener("DOMContentLoaded", function() {
+function errBack(error) {
+	console.log("Video capture error: ", error.code);
+}
+
+function ghostInit() {
+
 	var canvas = document.getElementById("canvas"),
 		context = canvas.getContext("2d"),
 		video = document.getElementById("video"),
-		videoObj = { "video": true },
-		errBack = function(error) {
-			console.log("Video capture error: ", error.code);
-		};
+		videoObj = { "video": true };
+
 	if(navigator.getUserMedia) {
 		navigator.getUserMedia(videoObj, function(stream) {
 			video.src = stream;
 			video.play();
 		}, errBack);
-	} else if(navigator.webkitGetUserMedia) {
-		navigator.webkitGetUserMedia(videoObj, function(stream) {
-			video.src = window.webkitURL.createObjectURL(stream);
-			video.play();
-		}, errBack);
-	} else if(mozGetUserMedia) {
-		navigator.mozGetUserMedia(videoObj, function(stream) {
-			video.src = windoe.URL.createObjectURL(stream);
-			video.play();
-		}, errBack);
 	}
+
 	var img;
 	document.getElementById("snap").addEventListener("click", function() {
 		context.drawImage(video, 0, 0, 640, 480);
@@ -37,7 +31,12 @@ window.addEventListener("DOMContentLoaded", function() {
 		document.getElementById("img").src = img.src;
 		console.log(img.src);
 	});
-	
-}, false);
+}
+
+navigator.getUserMedia = navigator.getUserMedia || 
+							navigator.webkitGetUserMedia ||
+							navigator.mozGetUserMedia;
+							
+window.addEventListener("DOMContentLoaded", ghostInit, false);
 
 
