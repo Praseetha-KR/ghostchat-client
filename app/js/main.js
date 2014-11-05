@@ -1,5 +1,11 @@
 'use strict';
 
+function convertCanvasToImage(canvas) {
+	var image = new Image();
+	image.src = canvas.toDataURL("image/png");
+	return image;
+}
+
 window.addEventListener("DOMContentLoaded", function() {
 	var canvas = document.getElementById("canvas"),
 		context = canvas.getContext("2d"),
@@ -24,8 +30,12 @@ window.addEventListener("DOMContentLoaded", function() {
 			video.play();
 		}, errBack);
 	}
+	var img;
 	document.getElementById("snap").addEventListener("click", function() {
 		context.drawImage(video, 0, 0, 640, 480);
+		img = convertCanvasToImage(canvas);
+		document.getElementById("img").src = img.src;
+		console.log(img.src);
 	});
 	
 }, false);
