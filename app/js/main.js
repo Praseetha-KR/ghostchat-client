@@ -18,11 +18,21 @@ function ghostInit() {
 		videoObj = { "video": true };
 
 	if(navigator.getUserMedia) {
-		navigator.getUserMedia(videoObj, function(stream) {
-			video.src = stream;
+ 		navigator.getUserMedia(videoObj, function(stream) {
+ 			video.src = stream;
+ 			video.play();
+ 		}, errBack);
+	} else if(navigator.webkitGetUserMedia) {
+		navigator.webkitGetUserMedia(videoObj, function(stream) {
+			video.src = window.webkitURL.createObjectURL(stream);
 			video.play();
 		}, errBack);
-	}
+	} else if(mozGetUserMedia) {
+		navigator.mozGetUserMedia(videoObj, function(stream) {
+			video.src = windoe.URL.createObjectURL(stream);
+			video.play();
+		}, errBack);
+ 	}
 
 	var img;
 	document.getElementById("snap").addEventListener("click", function() {
@@ -33,10 +43,8 @@ function ghostInit() {
 	});
 }
 
-navigator.getUserMedia = navigator.getUserMedia || 
-							navigator.webkitGetUserMedia ||
-							navigator.mozGetUserMedia;
+// navigator.getUserMedia = navigator.getUserMedia || 
+// 							navigator.webkitGetUserMedia ||
+// 							navigator.mozGetUserMedia;
 							
 window.addEventListener("DOMContentLoaded", ghostInit, false);
-
-
