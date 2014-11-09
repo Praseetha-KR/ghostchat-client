@@ -42,9 +42,5 @@ function ghostInit() {
 		console.log(img.src);
 	});
 }
-
-// navigator.getUserMedia = navigator.getUserMedia || 
-// 							navigator.webkitGetUserMedia ||
-// 							navigator.mozGetUserMedia;
 							
 window.addEventListener("DOMContentLoaded", ghostInit, false);
