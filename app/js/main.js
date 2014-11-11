@@ -16,23 +16,22 @@ function ghostInit() {
 		context = canvas.getContext("2d"),
 		video = document.getElementById("video"),
 		videoObj = { "video": true };
-
-	if(navigator.getUserMedia) {
- 		navigator.getUserMedia(videoObj, function(stream) {
- 			video.src = stream;
- 			video.play();
- 		}, errBack);
-	} else if(navigator.webkitGetUserMedia) {
-		navigator.webkitGetUserMedia(videoObj, function(stream) {
-			video.src = window.webkitURL.createObjectURL(stream);
-			video.play();
-		}, errBack);
-	} else if(mozGetUserMedia) {
-		navigator.mozGetUserMedia(videoObj, function(stream) {
-			video.src = windoe.URL.createObjectURL(stream);
-			video.play();
-		}, errBack);
- 	}
+	
+	// prompts the user permission to use camera
+	if (navigator.getUserMedia) {
+		navigator.getUserMedia(
+			videoObj, 
+			function(localMediaStream) {
+				video.src = window.URL.createObjectURL(localMediaStream);
+				video.play();
+			},
+			function(err) {
+				console.log("The following error occured: " + err);
+			}
+		);
+	} else {
+		console.log("getUserMedia not supported");
+	}
 
 	var img;
 	document.getElementById("snap").addEventListener("click", function() {
@@ -42,5 +41,10 @@ function ghostInit() {
 		console.log(img.src);
 	});
 }
+
+navigator.getUserMedia = ( navigator.getUserMedia ||
+						navigator.webkitGetUserMedia ||
+						navigator.mozGetUserMedia ||
+						navigator.msGetUserMedia);
 							
 window.addEventListener("DOMContentLoaded", ghostInit, false);
