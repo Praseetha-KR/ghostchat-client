@@ -3,7 +3,8 @@
   "version": "0.0.2",
   "description": "GhostChat client",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
@@ -15,6 +16,7 @@
     "url": "https://github.com/Praseetha-KR/ghostchat-client/issues"
   },
   "devDependencies": {
+    "bower": "*",
     "grunt": "*",
     "grunt-contrib-connect": "*",
     "grunt-contrib-less": "*",
