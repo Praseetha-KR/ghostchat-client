@@ -25,9 +25,7 @@ function ghostInit() {
 				video.src = window.URL.createObjectURL(localMediaStream);
 				video.play();
 			},
-			function(err) {
-				console.log("The following error occured: " + err);
-			}
+			errBack
 		);
 	} else {
 		console.log("getUserMedia not supported");
