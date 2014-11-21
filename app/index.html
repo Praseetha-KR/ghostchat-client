@@ -6,6 +6,14 @@
     <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
     <link rel="stylesheet" href="bower_components/icomoon/style.css">
     <link rel="stylesheet" href="css/main.css">
+    <style>
+        #state1 {
+            display: block;
+        }
+        #state2 {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div id="bodywrapper">
@@ -13,16 +21,25 @@
             <span id="logo" class="vertical-center"></span>
             <span id="title" class="vertical-center">GhostChat</span>
         </header>
-        <div id="maincontent" class="footer-clearance">
-            <video id="video" width="320" height="240" autoplay></video>
-            <canvas id="canvas" width="320" height="240"></canvas>
-            <img src="" alt="" id="img">
-        </div>
-        <footer>
-            <ul id="footer-buttons">
-                <li><a id="snap"><i class="icon-camera"></i></a></li>
-            </ul>
-        </footer>
+        <form action="">
+            <div id="maincontent" class="footer-clearance">
+                <video id="video" width="320" height="240" autoplay></video>
+                <canvas id="canvas" width="320" height="240"></canvas>
+                <img src="" alt="" id="img">
+            </div>
+            <footer id="state1">
+                <ul id="footer-buttons">
+                    <li><a id="snap"><i class="icon-camera"></i></a></li>
+                </ul>
+            </footer>
+            <footer id="state2">
+                <ul id="footer-buttons">
+                    <li><a href=""><i class="icon-redo"></i></a></li>
+                    <li><button type="submit"><i class="icon-checkmark"></i></button></li>
+                    <li><a href=""><i class="icon-close"></i></a></li>
+                </ul>
+            </footer>
+        </form>
     </div>
     <script src="js/main.js"></script>
 </body>

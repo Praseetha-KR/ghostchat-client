@@ -33,6 +33,8 @@ function ghostInit() {
 
 	var img;
 	document.getElementById("snap").addEventListener("click", function() {
+		document.getElementById("state1").style.display = "none";
+		document.getElementById("state2").style.display = "block";
 		video.style.display = "none";
 		context.drawImage(video, 0, 0, 320, 240);
 		img = convertCanvasToImage(canvas);
